@@ -11,69 +11,65 @@ namespace net_calculator_tester
         public float A { get; set; }
         public float B { get; set; }
 
-        public Calculator(float a, float b)
-        {
-            this.A = a;
-            this.B = b;
-        }
 
-        public float Add()
+        public float Add(float a, float b)
         {
-            return this.A + this.B;
+            return a + b;
         }
         
         
         
-        public float Substract()
+        public float Substract(float a, float b)
         {
-            return this.A - this.B;
+            return a - b;
         }
         
         
         
-        public float Multiply()
+        public float Multiply(float a, float b)
         {
-            return this.A * this.B;
+            return a * b;
         }
         
         
         
-        public float Divide()
+        public float Divide(float a, float b)
         {
-            return this.A / this.B;
+            return a / b;
         }
         
         
-        public float Power()
+        public float Power(float a, float b)
         {
             float pow = 1;
-
-            if (this.B > 0)
+            if (a == 0)
             {
-                for (int i = 0; i < this.B; i++)
+                pow = 1;
+                return pow;
+            }
+
+            if (b > 0)
+            {
+                for (int i = 0; i < b; i++)
                 {
-                    pow *= this.A;
+                    pow *= a;
 
                 }
                 
             }
-            else if(this.B < 0)
+            else if(b < 0)
             {
-                this.B *= -1;
+                b *= -1;
 
-                for (int i = 0; i < this.B; i++)
+                for (int i = 0; i < b; i++)
                 {
 
-                    pow *= (float)1 / this.A;
+                    pow *= (float)1 / a;
 
                 }
                 
             }
             
-            if (this.A == 0)
-            {
-                pow = 1;
-            }
 
             return pow;
             

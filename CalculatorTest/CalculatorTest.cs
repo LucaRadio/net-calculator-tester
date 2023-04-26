@@ -8,43 +8,47 @@ namespace CalculatorTest
         [SetUp]
         public void Setup()
         {
-           calculator = new Calculator(1,1);
+           calculator = new Calculator();
         }
 
-        [Test]
-        public void AddTest()
+        [TestCase(1,1,2)]
+        public void AddTest(float a,float b,float result)
         {
             
-            Assert.That(calculator.Add(), Is.EqualTo(2));
+            Assert.That(calculator.Add(a,b), Is.EqualTo(result));
+        }
+
+
+
+        [TestCase(1, 1,0)]
+        public void SubstractTest(float a, float b,float result)
+        {
+            Assert.That(calculator.Substract(a,b), Is.EqualTo(result));
+        }
+
+
+
+
+        [TestCase(1, 1,1)]
+        public void MultiplayTest(float a, float b,float result)
+        {
+            Assert.That(calculator.Multiply(a, b), Is.EqualTo(result));
+        }
+
+
+
+        [TestCase(1, 1,1)]
+        public void DivideTest(float a, float b,float result)
+        {
+            Assert.That(calculator.Divide(a, b), Is.EqualTo(result));
         }
         
         
-        [Test]
-        public void SubstractTest()
+        
+        [TestCase(1,1,1)]
+        public void PowerTest(float a, float b,float result)
         {
-            Assert.That(calculator.Substract(), Is.EqualTo(0));
-        }
-        
-        
-        
-        [Test]
-        public void MultiplayTest()
-        {
-            Assert.That(calculator.Multiply(), Is.EqualTo(1));
-        }
-        
-        
-        [Test]
-        public void DivideTest()
-        {
-            Assert.That(calculator.Divide(), Is.EqualTo(1));
-        }
-        
-        
-        [Test]
-        public void PowerTest()
-        {
-            Assert.That(calculator.Power(), Is.EqualTo(1));
+            Assert.That(calculator.Power(a, b), Is.EqualTo(result));
         }
     }
 }
