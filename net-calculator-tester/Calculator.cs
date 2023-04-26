@@ -52,7 +52,8 @@ namespace net_calculator_tester
             {
                 for (int i = 0; i < this.B; i++)
                 {
-                    pow *= this.B;
+                    pow *= this.A;
+
                 }
                 
             }
