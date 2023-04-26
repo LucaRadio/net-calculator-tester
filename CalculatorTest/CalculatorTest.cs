@@ -38,14 +38,25 @@ namespace CalculatorTest
 
 
         [TestCase(1, 1,1)]
+        [TestCase(1, 0,float.NaN)]
         public void DivideTest(float a, float b,float result)
         {
-            Assert.That(calculator.Divide(a, b), Is.EqualTo(result));
+            if (b == 0)
+            {
+                Assert.That(calculator.Divide(a, b), Is.EqualTo(float.NaN));
+            }
+            else
+            {
+                Assert.That(calculator.Divide(a, b), Is.EqualTo(result));
+
+            }
         }
         
         
         
         [TestCase(1,1,1)]
+        [TestCase(0,3,0)]
+        [TestCase(645,0,1)]
         public void PowerTest(float a, float b,float result)
         {
             Assert.That(calculator.Power(a, b), Is.EqualTo(result));

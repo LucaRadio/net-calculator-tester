@@ -32,6 +32,7 @@
             Console.WriteLine($"Divide: {calc.Divide(a, b)}\n");
             Console.WriteLine($"Power: {calc.Power(a, b)}\n");
 
+
         }
     }
 }

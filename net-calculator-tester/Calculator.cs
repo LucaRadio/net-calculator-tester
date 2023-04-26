@@ -35,6 +35,10 @@ namespace net_calculator_tester
         
         public float Divide(float a, float b)
         {
+            if (b == 0)
+            {
+                return float.NaN;
+            }
             return a / b;
         }
         
@@ -42,7 +46,7 @@ namespace net_calculator_tester
         public float Power(float a, float b)
         {
             float pow = 1;
-            if (a == 0)
+            if (b == 0)
             {
                 pow = 1;
                 return pow;
