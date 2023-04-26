@@ -30,6 +30,7 @@
             Console.WriteLine($"Substract: {calc.Substract()}\n");
             Console.WriteLine($"Multiply: {calc.Multiply()}\n");
             Console.WriteLine($"Divide: {calc.Divide()}\n");
+            Console.WriteLine($"Power: {calc.Power()}\n");
 
         }
     }

@@ -39,5 +39,12 @@ namespace CalculatorTest
         {
             Assert.That(calculator.Divide(), Is.EqualTo(1));
         }
+        
+        
+        [Test]
+        public void PowerTest()
+        {
+            Assert.That(calculator.Power(), Is.EqualTo(1));
+        }
     }
 }

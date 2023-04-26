@@ -42,5 +42,40 @@ namespace net_calculator_tester
         {
             return this.A / this.B;
         }
+        
+        
+        public float Power()
+        {
+            float pow = 1;
+
+            if (this.B > 0)
+            {
+                for (int i = 0; i < this.B; i++)
+                {
+                    pow *= this.B;
+                }
+                
+            }
+            else if(this.B < 0)
+            {
+                this.B *= -1;
+
+                for (int i = 0; i < this.B; i++)
+                {
+
+                    pow *= (float)1 / this.A;
+
+                }
+                
+            }
+            
+            if (this.A == 0)
+            {
+                pow = 1;
+            }
+
+            return pow;
+            
+        }
     }
 }
